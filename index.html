@@ -80,21 +80,38 @@
     /* ── CATALOG TOOLBAR ── */
     .catalog-bar {
       padding: 1rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       border-bottom: 1px solid var(--line);
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--mid);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .catalog-bar .channels a {
-      margin-left: 1.5rem;
-    }
-
+    .catalog-bar .channels a { margin-left: 1.5rem; }
     .catalog-bar .channels a:hover { color: var(--accent); }
+
+    /* nota con los otros canales, al pie del catálogo (bajo la grilla) —
+       solo se muestra en mobile, ver media query abajo */
+    .catalog-footnote {
+      display: none;
+      border-top: 1px solid var(--line);
+      padding: 1.25rem 2.5rem;
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .catalog-footnote a {
+      color: var(--accent);
+      margin: 0 0.2rem;
+    }
+
+    .catalog-footnote a:hover { text-decoration: underline; }
 
     /* ── GRID ── */
     .grid {
@@ -144,7 +161,7 @@
     }
 
     .card-info {
-      padding: 1.25rem 1.5rem 1.5rem;
+      padding: 1.25rem 0 1.5rem;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -215,6 +232,10 @@
       max-width: 55ch;
     }
 
+    .about-strip p + p {
+      margin-top: 1rem;
+    }
+
     /* ── CONTACT SECTION ── */
     .contact-section {
       border-top: 1px solid var(--line);
@@ -269,10 +290,12 @@
     @media (max-width: 640px) {
       header { padding: 0 1.25rem; }
       nav { gap: 1.5rem; }
-      .catalog-bar { padding: 0.75rem 1.25rem; flex-wrap: wrap; gap: 0.4rem; }
-      .catalog-bar .channels a { margin-left: 0; margin-right: 1rem; }
+      .catalog-bar { padding: 0.75rem 1.25rem; }
+      .catalog-bar .channels { display: none; }
+      .catalog-footnote { display: block; padding: 1rem 1.25rem; }
       .grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; padding: 0.75rem; }
-      .card-info { padding: 0.85rem 0.75rem 1rem; gap: 0.5rem; }
+      .card-info { padding: 0.85rem 0 1rem; gap: 0.35rem; flex-direction: column; align-items: flex-start; }
+      .card-meta { text-align: left; }
       .card-name { font-size: 0.95rem; }
       .about-strip { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
       .contact-section { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; }
@@ -293,9 +316,9 @@
   </header>
 
   <!-- CATALOG BAR -->
+  <!-- REEMPLAZAR: links reales a tu tienda de Etsy y a tu página de Ravelry cuando existan -->
   <div class="catalog-bar" id="catalogo">
     <span>patrones digitales</span>
-    <!-- REEMPLAZAR: links reales a tu tienda de Etsy y a tu página de Ravelry cuando existan -->
     <span class="channels">
       también en
       <a href="#" target="_blank" rel="noopener">Etsy</a>
@@ -325,6 +348,14 @@
 
   </main>
 
+  <!-- REEMPLAZAR: links reales a tu tienda de Etsy y a tu página de Ravelry cuando existan -->
+  <div class="catalog-footnote">
+    también disponible en
+    <a href="#" target="_blank" rel="noopener">Etsy</a>
+    y
+    <a href="#" target="_blank" rel="noopener">Ravelry</a>
+  </div>
+
   <!-- SOBRE -->
   <section class="about-strip" id="sobre">
     <div>
@@ -332,15 +363,18 @@
       <span class="about-subtitle">Tatuadora y artista textil</span>
       <p>
         Diseño patrones digitales de crochet y punto cruz. Me gusta hacer
-        memoria tejiendo y bordando. Celebro lo lento y lo pequeño. Esta es
-        mi web de patrones. Espero que los disfrutes tanto como yo.
+        memoria tejiendo y bordando. Celebro lo lento y lo pequeño.
+      </p>
+      <p>
+        Esta es mi web de patrones. Espero que los disfrutes tanto como yo
+        <span style="color: var(--accent);">♥</span>
       </p>
     </div>
   </section>
 
   <!-- CONTACTO -->
   <section class="contact-section" id="contacto">
-    <p style="font-family: 'EB Garamond', serif; font-style: normal; font-size: 1.05rem; font-weight: 500; color: var(--accent);">¿Tienes dudas sobre un patrón? Escríbenos vía Instagram.</p>
+    <p style="font-family: 'EB Garamond', serif; font-style: normal; font-size: 1.05rem; font-weight: 500; color: var(--accent);">¿Tienes dudas sobre un patrón? Escríbeme vía Instagram.</p>
     <!-- REEMPLAZAR: tu handle real de Instagram -->
     <a class="btn-ig" href="https://instagram.com/amaranta.paz" target="_blank" rel="noopener">
       @amaranta.paz
