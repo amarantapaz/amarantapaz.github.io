@@ -13,13 +13,18 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Misma paleta y tipografía que doloresestudio.com, para mantener la identidad visual entre tus dos marcas */
+    /* Misma tipografía y estructura que doloresestudio.com. Diferencias propias
+       de Amaranta Paz: --bg con un leve tinte rosado frío, --mid con un matiz
+       guinda (en vez del gris neutro de Dolores), y --accent (guinda, más
+       saturado, weight 500) usado en todos los títulos y en precios/botones/
+       hovers. */
     :root {
-      --bg:        #fdfbfa;
+      --bg:        #fbf1f4;
       --fg:        #1a1a18;
-      --mid:       #8a8880;
+      --mid:       #825659;
       --line:      #d4d2ce;
       --white:     #faf9f7;
+      --accent:    #7a2331;
     }
 
     html { font-size: 16px; }
@@ -54,9 +59,11 @@
     .logo {
       font-family: 'EB Garamond', serif;
       font-size: 1.15rem;
+      font-weight: 500;
       font-style: italic;
       letter-spacing: 0.14em;
       text-transform: lowercase;
+      color: var(--accent);
     }
 
     nav {
@@ -68,7 +75,7 @@
       color: var(--mid);
     }
 
-    nav a:hover { color: var(--fg); }
+    nav a:hover { color: var(--accent); }
 
     /* ── CATALOG TOOLBAR ── */
     .catalog-bar {
@@ -87,7 +94,7 @@
       margin-left: 1.5rem;
     }
 
-    .catalog-bar .channels a:hover { color: var(--fg); }
+    .catalog-bar .channels a:hover { color: var(--accent); }
 
     /* ── GRID ── */
     .grid {
@@ -148,7 +155,8 @@
     .card-name {
       font-family: 'EB Garamond', serif;
       font-size: 1.05rem;
-      font-weight: 400;
+      font-weight: 500;
+      color: var(--accent);
     }
 
     .card-meta {
@@ -158,7 +166,8 @@
 
     .card-price {
       font-size: 0.85rem;
-      color: var(--fg);
+      font-weight: 500;
+      color: var(--accent);
       display: block;
     }
 
@@ -183,10 +192,20 @@
     .about-strip h2 {
       font-family: 'EB Garamond', serif;
       font-size: 1.8rem;
-      font-weight: 400;
+      font-weight: 500;
       font-style: italic;
-      margin-bottom: 1rem;
+      margin-bottom: 0.4rem;
       line-height: 1.25;
+      color: var(--accent);
+    }
+
+    .about-subtitle {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.25rem;
     }
 
     .about-strip p {
@@ -210,8 +229,9 @@
     .contact-section p {
       font-family: 'EB Garamond', serif;
       font-style: italic;
+      font-weight: 500;
       font-size: 1.3rem;
-      color: var(--fg);
+      color: var(--accent);
       max-width: 42ch;
       line-height: 1.4;
     }
@@ -220,7 +240,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      border: 1px solid var(--fg);
+      border: 1px solid var(--accent);
+      color: var(--accent);
       padding: 0.75rem 1.75rem;
       font-size: 0.72rem;
       letter-spacing: 0.12em;
@@ -229,7 +250,7 @@
       white-space: nowrap;
     }
 
-    .btn-ig:hover { background: var(--fg); color: var(--bg); }
+    .btn-ig:hover { background: var(--accent); color: var(--white); }
 
     /* ── FOOTER ── */
     footer {
@@ -308,21 +329,18 @@
   <section class="about-strip" id="sobre">
     <div>
       <h2>Amaranta Paz</h2>
+      <span class="about-subtitle">Tatuadora y artista textil</span>
       <p>
-        Amaranta Paz es un proyecto de patrones digitales de tejido y crochet.
-      </p>
-      <p style="margin-top: 0.25rem;">
-        Cada patrón es diseñado y probado por Amaranta Paz antes de publicarse.
-      </p>
-      <p style="margin-top: 1.5rem;">
-        Los patrones se entregan en PDF, con descarga inmediata tras la compra.
+        Diseño patrones digitales de crochet y punto cruz. Me gusta hacer
+        memoria tejiendo y bordando. Celebro lo lento y lo pequeño. Esta es
+        mi web de patrones. Espero que los disfrutes tanto como yo.
       </p>
     </div>
   </section>
 
   <!-- CONTACTO -->
   <section class="contact-section" id="contacto">
-    <p style="font-family: 'EB Garamond', serif; font-style: normal; font-size: 1.05rem; font-weight: 400;">¿Tienes dudas sobre un patrón? Escríbenos vía Instagram.</p>
+    <p style="font-family: 'EB Garamond', serif; font-style: normal; font-size: 1.05rem; font-weight: 500; color: var(--accent);">¿Tienes dudas sobre un patrón? Escríbenos vía Instagram.</p>
     <!-- REEMPLAZAR: tu handle real de Instagram -->
     <a class="btn-ig" href="https://instagram.com/amaranta.paz" target="_blank" rel="noopener">
       @amaranta.paz

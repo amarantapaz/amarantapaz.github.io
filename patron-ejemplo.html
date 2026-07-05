@@ -12,11 +12,12 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #fdfbfa;
+      --bg:        #fbf1f4;
       --fg:        #1a1a18;
-      --mid:       #8a8880;
+      --mid:       #825659;
       --line:      #d4d2ce;
       --white:     #faf9f7;
+      --accent:    #7a2331;
     }
 
     html { font-size: 16px; }
@@ -47,9 +48,11 @@
     .logo {
       font-family: 'EB Garamond', serif;
       font-size: 1.15rem;
+      font-weight: 500;
       font-style: italic;
       letter-spacing: 0.14em;
       text-transform: lowercase;
+      color: var(--accent);
     }
 
     nav {
@@ -61,7 +64,7 @@
       color: var(--mid);
     }
 
-    nav a:hover { color: var(--fg); }
+    nav a:hover { color: var(--accent); }
 
     .back-link {
       padding: 1.25rem 2.5rem 0;
@@ -72,7 +75,7 @@
       display: block;
     }
 
-    .back-link:hover { color: var(--fg); }
+    .back-link:hover { color: var(--accent); }
 
     /* ── PRODUCT LAYOUT ── */
     .product {
@@ -120,12 +123,15 @@
     .info h1 {
       font-family: 'EB Garamond', serif;
       font-size: 2rem;
-      font-weight: 400;
+      font-weight: 500;
       margin-bottom: 0.5rem;
+      color: var(--accent);
     }
 
     .info .price {
       font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--accent);
       margin-bottom: 0.25rem;
     }
 
@@ -158,9 +164,9 @@
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      border: 1px solid var(--fg);
-      background: var(--fg);
-      color: var(--bg);
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: var(--white);
       padding: 0.85rem 1.75rem;
       font-size: 0.72rem;
       letter-spacing: 0.12em;
@@ -179,7 +185,7 @@
     }
 
     /* REEMPLAZAR: hrefs reales de Etsy y Ravelry para este patrón */
-    .channels-note a { color: var(--fg); text-decoration: underline; }
+    .channels-note a { color: var(--accent); text-decoration: underline; }
 
     footer {
       border-top: 1px solid var(--line);
