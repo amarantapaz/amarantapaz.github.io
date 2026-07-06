@@ -187,13 +187,13 @@
 
 /* estado vacío */
 .cart-empty {
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
   color: var(--mid);
   text-align: center;
   padding: 3rem 1.5rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* pie del panel: total + botón pagar */
