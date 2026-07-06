@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
 
+  <!-- estilos del carrito de compras -->
+  <link rel="stylesheet" href="carrito.css" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -217,6 +220,15 @@
       <a href="/#catalogo">catálogo</a>
       <a href="/#sobre">sobre</a>
       <a href="/#contacto">contacto</a>
+      <!-- ícono del carrito de compras -->
+      <button class="cart-toggle" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </button>
     </nav>
   </header>
 
@@ -251,8 +263,22 @@
       <p>Nivel de dificultad, agujas/ganchillo recomendado y materiales necesarios.</p>
       <p>Tallas disponibles y notas adicionales.</p>
 
-      <!-- BOTÓN DE COMPRA — REEMPLAZAR href por el embed/link real de Payhip -->
-      <a class="btn-comprar" href="#" target="_blank" rel="noopener">Comprar patrón — $8.000</a>
+      <!-- AGREGAR AL CARRITO — para comprar varios patrones juntos.
+           price va SOLO en número (8000). Pon la key de Payhip en data-payhip
+           cuando la tengas. -->
+      <button class="add-to-cart"
+              style="width: 100%; margin-top: 0.5rem;"
+              data-id="patron-ejemplo"
+              data-name="Patrón Ejemplo"
+              data-price="8000"
+              data-format="PDF · descarga inmediata"
+              data-img=""
+              data-payhip="">
+        + agregar al carrito
+      </button>
+
+      <!-- COMPRA DIRECTA (un solo patrón) — REEMPLAZAR href por el embed/link real de Payhip -->
+      <a class="btn-comprar" href="#" target="_blank" rel="noopener">Comprar ahora — $8.000</a>
 
       <p class="channels-note">
         También disponible en
@@ -268,6 +294,9 @@
     <span>amaranta paz</span>
     <span>Santiago de Chile · 2026</span>
   </footer>
+
+  <!-- lógica del carrito de compras -->
+  <script src="carrito.js"></script>
 
 </body>
 </html>
